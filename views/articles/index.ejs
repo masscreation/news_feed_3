@@ -1,16 +1,32 @@
 <!--views/articles/index.ejs-->
 <!DOCTYPE HTML>
 <html>
+<head>
+	<title>List Articles</title>
+	 <link rel="stylesheet" href="/style.css" >
+</head>
 <body>
 <h1>Articles index</h1>
-<% articlesList.forEach(function(article) { %>
+<% articlesList.forEach(function(article) {  console.log(article); %>
 <div>
-  <a href="/articles/<%= article.id %>"><%= article.title %></a>
-  <div>
-    <%= article.content %>
-  </div>
+	<ul >
+	  <li><a href="/articles/<%= article.id %>"><%= article.title %></a></li>
+	<div>
+	    <%= article.content %>
+	</div>
+	  <li>	<form action="/article/<%= article.id %>/edit" method="GET">
+	  			<button><a href="articles/<%= article.id %>/edit">Edit</button></a>
+	  		</form>
+	  </li>
+	  <li>
+	  	<form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+	  		<button type="submit">Delete</button>
+	  	</form>
+	  </li>
+	</ul>
 </div>
 <% }) %>
+<p><a href="/articles/new">Create a New Article</a> </p>
 </body>
 </html>
 

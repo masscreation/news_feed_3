@@ -8,7 +8,12 @@
   	<li>Author: <%= articleToDisplay.author  %></li>
   	<li>Content: <%= articleToDisplay.content  %></li>
   </ul>
+  <p><a href="/articles/<%= articleToDisplay.id - 1 %>">Previous Article</a>&nbsp; &nbsp;
+  <a href="/articles/<%= articleToDisplay.id + 1 %>">Next Article</a></p>
+  
+  <p><a href="/articles"><-- Back to Articles</a></p>
 </div>
 </body>
 </html>
 
+ 

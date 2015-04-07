@@ -5,11 +5,11 @@
   <head>
   </head>
   <body>
-    <h1>Add an article</h1>
+    <h1>Edit an article</h1>
     <form method="post" action="/articles/<%= article.id %>?_method=PUT">
-      <input type="text" name="article[title]" placeholder="Article title" value="<%= article.title %>"><br />
-      <input type="text" name="article[author]" placeholder="Article author" value="<%= article.author %>"><br />
-      <textarea name="article[content]">
+      <input type="text" name="title" placeholder="Edit the title" value="<%= article.title %>"><br />
+      <input type="text" name="author" placeholder="Who are you?" value="<%= article.author %>"><br />
+      <textarea name="content"  value="<%= article.content %>">
       	<%= article.content %>
       </textarea><br />
       <button>Save </button>
